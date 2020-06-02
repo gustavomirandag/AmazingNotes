@@ -27,6 +27,7 @@ namespace AmazingNotesApp.Views
             App.Items.Remove((Item)e.Item);
         }
         
+
         private void ButtonAddItem_Clicked(object sender, EventArgs e)
         {
             Navigation.PushModalAsync(new AddItemPage(),true);
