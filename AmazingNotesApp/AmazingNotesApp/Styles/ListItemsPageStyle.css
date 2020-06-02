@@ -2,12 +2,12 @@
 {
 }
 
-#LabelTitle
+.labelTitle
 {
     font-size:16;
 }
 
-#LabelDescription
+.labelDescription
 {
     color:gray;
     font-size:13;

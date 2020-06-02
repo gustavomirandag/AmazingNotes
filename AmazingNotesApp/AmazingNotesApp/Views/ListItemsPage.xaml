@@ -11,12 +11,12 @@
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <StackLayout>
+        <AbsoluteLayout>
             <ListView x:Name="ListViewItems">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid>
+                            <Grid Padding="10">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="*"/>
@@ -24,14 +24,14 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Label x:Name="LabelTitle" Grid.Row="0" Grid.Column="0" Text="{Binding Title}"/>
-                                <Label x:Name="LabelDescription" Grid.Row="1" Grid.Column="0" Text="{Binding Description}"/>
+                                <Label x:Name="LabelTitle" StyleClass="labelTitle" Grid.Row="0" Grid.Column="0" Text="{Binding Title}"/>
+                                <Label x:Name="LabelDescription" StyleClass="labelDescription" Grid.Row="1" Grid.Column="0" Text="{Binding Description}"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button x:Name="ButtonAddItem" Text="+" Clicked="ButtonAddItem_Clicked"/>
-        </StackLayout>
+            <Button x:Name="ButtonAddItem" AbsoluteLayout.LayoutBounds=".50,.96,60,60" Text="+" TextColor="White" WidthRequest="40" HeightRequest="40" BorderRadius="40" BackgroundColor="DarkBlue" BorderWidth="2" Clicked="ButtonAddItem_Clicked"/>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

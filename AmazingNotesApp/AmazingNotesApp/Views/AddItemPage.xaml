@@ -6,11 +6,22 @@
              mc:Ignorable="d"
              x:Class="AmazingNotesApp.Views.AddItemPage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="10">
             <Entry x:Name="EntryTitle" Placeholder="Type your item title" />
             <Entry x:Name="EntryDescription" Placeholder="Type your item description" />
-            <Button x:Name="ButtonAddItem" Text="Add" Clicked="ButtonAddItem_Clicked"></Button>
-            <Button x:Name="ButtonCancel" Text="Cancel" Clicked="ButtonCancel_Clicked"></Button>
+
+            <StackLayout Padding="20">
+                <BoxView Color="Black" HorizontalOptions="FillAndExpand" HeightRequest="2"/>
+                <Switch x:Name="SwitchReminder" IsToggled="false" />
+                <DatePicker x:Name="DatePickerReminder" IsEnabled="False"/>
+                <TimePicker x:Name="TimePickerReminder" IsEnabled="False" />
+                <BoxView Color="Black" HorizontalOptions="FillAndExpand" HeightRequest="2"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="ButtonAddItem" Text="Add" Clicked="ButtonAddItem_Clicked"></Button>
+                <Button x:Name="ButtonCancel" Text="Cancel" Clicked="ButtonCancel_Clicked"></Button>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
