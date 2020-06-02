@@ -5,16 +5,28 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="AmazingNotesApp.Views.ListItemsPage">
+
+    <ContentPage.Resources>
+        <StyleSheetExtension Source="/Styles/ListItemsPageStyle.css"/>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="ListViewItems">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout>
-                                <Label x:Name="LabelTitle" Text="{Binding Title}"/>
-                                <Label x:Name="LabelDescription" Text="{Binding Description}"/>
-                            </StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label x:Name="LabelTitle" Grid.Row="0" Grid.Column="0" Text="{Binding Title}"/>
+                                <Label x:Name="LabelDescription" Grid.Row="1" Grid.Column="0" Text="{Binding Description}"/>
+                            </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
