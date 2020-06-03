@@ -28,19 +28,19 @@ namespace AmazingNotesApp.Views
         {
             var item = (Item)e.Item;
             Navigation.PushModalAsync(new UpdateItemPage(item));
-        }
-
-        private void DeleteItem(object sender, ItemTappedEventArgs e)
-        {
-            var item = (Item)e.Item;
-            App.Items.Remove(item);
-            App.Service.DeleteItem(item.Id);
-        }
-        
+        }       
 
         private void ButtonAddItem_Clicked(object sender, EventArgs e)
         {
             Navigation.PushModalAsync(new AddItemPage(),true);
+        }
+
+        private void ButtonRemove_Clicked(object sender, EventArgs e)
+        {
+            Guid itemId = (Guid)((Button)sender).CommandParameter;
+            var item = App.Service.GetItemById(itemId);
+            App.Items.Remove(item);
+            App.Service.DeleteItem(item.Id);
         }
     }
 }

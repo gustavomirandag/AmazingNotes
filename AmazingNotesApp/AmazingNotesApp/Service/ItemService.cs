@@ -27,6 +27,11 @@ namespace AmazingNotesApp.Service
             return itemRepository.ReadAll();
         }
 
+        public Item GetItemById(Guid id)
+        {
+            return itemRepository.Read(id);
+        }
+
         public void UpdateItem(Item item)
         {
             itemRepository.Update(item);
