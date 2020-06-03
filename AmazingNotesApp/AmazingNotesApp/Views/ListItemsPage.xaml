@@ -12,7 +12,7 @@
     
     <ContentPage.Content>
         <AbsoluteLayout>
-            <ListView x:Name="ListViewItems" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <ListView x:Name="ListViewItems" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
