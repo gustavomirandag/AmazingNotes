@@ -21,7 +21,13 @@ namespace AmazingNotesApp.Views
             App.Items = new ObservableCollection<Item>(App.Service.GetAll());
             ListViewItems.ItemsSource = App.Items;
             ListViewItems.IsPullToRefreshEnabled = true;
-            //ListViewItems.ItemTapped += DeleteItem;
+            ListViewItems.ItemTapped += UpdateItem;
+        }
+
+        private void UpdateItem(object sender, ItemTappedEventArgs e)
+        {
+            var item = (Item)e.Item;
+            Navigation.PushModalAsync(new UpdateItemPage(item));
         }
 
         private void DeleteItem(object sender, ItemTappedEventArgs e)
