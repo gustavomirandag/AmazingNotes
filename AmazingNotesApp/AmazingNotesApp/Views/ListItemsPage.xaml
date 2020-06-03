@@ -12,11 +12,11 @@
     
     <ContentPage.Content>
         <AbsoluteLayout>
-            <ListView x:Name="ListViewItems" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <ListView x:Name="ListViewItems" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional" HasUnevenRows="True" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid Padding="10" HorizontalOptions="FillAndExpand">
+                            <Grid Padding="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="*"/>

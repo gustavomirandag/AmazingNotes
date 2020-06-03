@@ -28,6 +28,7 @@ namespace AmazingNotesApp.Views
         {
             var item = (Item)e.Item;
             Navigation.PushModalAsync(new UpdateItemPage(item));
+            ListViewItems.SelectedItem = null;
         }       
 
         private void ButtonAddItem_Clicked(object sender, EventArgs e)
