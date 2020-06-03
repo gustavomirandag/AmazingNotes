@@ -18,13 +18,17 @@ namespace AmazingNotesApp.Views
         public ListItemsPage()
         {
             InitializeComponent();
+            App.Items = new ObservableCollection<Item>(App.Service.GetAll());
             ListViewItems.ItemsSource = App.Items;
-            ListViewItems.ItemTapped += DeleteItem;
+            ListViewItems.IsPullToRefreshEnabled = true;
+            //ListViewItems.ItemTapped += DeleteItem;
         }
 
         private void DeleteItem(object sender, ItemTappedEventArgs e)
         {
-            App.Items.Remove((Item)e.Item);
+            var item = (Item)e.Item;
+            App.Items.Remove(item);
+            App.Service.DeleteItem(item.Id);
         }
         
 

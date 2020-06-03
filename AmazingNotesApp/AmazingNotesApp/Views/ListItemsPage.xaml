@@ -12,11 +12,11 @@
     
     <ContentPage.Content>
         <AbsoluteLayout>
-            <ListView x:Name="ListViewItems">
+            <ListView x:Name="ListViewItems" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid Padding="10">
+                            <Grid Padding="10" HorizontalOptions="FillAndExpand">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="*"/>
@@ -31,7 +31,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button x:Name="ButtonAddItem" AbsoluteLayout.LayoutBounds=".50,.96,60,60" Text="+" TextColor="White" WidthRequest="40" HeightRequest="40" BorderRadius="40" BackgroundColor="DarkBlue" BorderWidth="2" Clicked="ButtonAddItem_Clicked"/>
+            <Button x:Name="ButtonAddItem" AbsoluteLayout.LayoutBounds=".50,0.96,60,60" AbsoluteLayout.LayoutFlags="PositionProportional" Text="+" TextColor="White" WidthRequest="40" HeightRequest="40" BorderRadius="40" BackgroundColor="DarkBlue" BorderWidth="2" Clicked="ButtonAddItem_Clicked"/>
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

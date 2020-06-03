@@ -34,6 +34,7 @@ namespace AmazingNotesApp.Views
             item.Title = EntryTitle.Text;
             item.Description = EntryDescription.Text;
             App.Items.Add(item);
+            App.Service.CreateItem(item);
 
             //LocalNotification
             if (SwitchReminder.IsToggled)
